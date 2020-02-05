@@ -219,7 +219,7 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id });
 
-    //     // Get remove index
+    // Get remove index
     const removeIndex = profile.experience
       .map(item => item.id)
       .indexOf(req.params.exp_id);
